@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 @theme inline {
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -23,4 +23,51 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.aurora {
+  width: 300px;
+  height: 600px;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at 30% 30%, #000000cd, transparent),
+    radial-gradient(circle at 70% 70%, #06ba4e, transparent);
+  filter: blur(80px);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: auroraMove 10s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMove {
+  0% {
+    transform: rotate(45deg) translate(0px, 0px) scale(1);
+    background-position: 30% 30%, 70% 70%;
+  }
+
+  50% {
+    transform: rotate(50deg) translate(20px, -10px) scale(1.05);
+    background-position: 35% 35%, 65% 65%;
+  }
+
+  100% {
+    transform: rotate(40deg) translate(-20px, 10px) scale(1);
+    background-position: 25% 25%, 75% 75%;
+  }
+}
+
+.blur {
+  filter: blur(500px)
+}
+
+.text-stroke-3 {
+  -webkit-text-stroke: 3px rgb(255, 255, 255);
+}
+
+.bg-image {
+  background-image: url("../public/assets/bg.jpg");
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
 }
