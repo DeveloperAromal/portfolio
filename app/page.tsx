@@ -1,4 +1,3 @@
-// import { About } from "./components/About";
 import AboutMe from "./components/AboutMe";
 import Education from "./components/OriginalStory";
 import Hero from "./components/Hero";
@@ -15,14 +14,12 @@ export default function Landing() {
       <NavBar />
       <Hero />
       <AboutMe />
-
       <Education />
       <Skills />
       <Works />
       <Contacts />
       <CTA />
       <Footer />
-      {/* <About /> */}
     </main>
   );
 }
