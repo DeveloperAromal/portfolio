@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import ParticleBackground from "./ui/ParticleBackground";
 
 export default function Hero() {
   const handleCopy = () => {
@@ -11,6 +12,10 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden mb-10">
+      <ParticleBackground />
+      <div className="absolute bg-emerald-500 w-40 h-40 bottom-0 blur " />
+      <div className="absolute bg-emerald-500 w-40 h-40 bottom-0 right-0 blur " />
+      <div className="absolute bg-emerald-500 w-80 h-40 bottom-0 right-1/2 translate-x-1/2 rounded-full top-1/2 -translate-y-1/2 blur" />
       <div className="relative h-60 w-full z-[19] mt-8">
         <div className="relative z-20 mx-auto mt-32 mb-2 flex max-w-full flex-col items-center justify-center px-3 md:mt-36 md:max-w-4xl lg:max-w-5xl">
           <Link
