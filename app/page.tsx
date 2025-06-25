@@ -1,7 +1,7 @@
 import AboutMe from "./components/AboutMe";
 import Education from "./components/OriginalStory";
 import Hero from "./components/Hero";
-import NavBar from "./components/includes/Nav";
+// import NavBar from "./components/includes/Nav";
 import Works from "./components/Works";
 import Contacts from "./components/Contact";
 import CTA from "./components/CTA";
@@ -11,12 +11,12 @@ import Skills from "./components/Skills";
 export default function Landing() {
   return (
     <main>
-      <NavBar />
+      {/* <NavBar /> */}
       <Hero />
       <AboutMe />
       <Education />
       <Skills />
-      <Works />
+      {/* <Works /> */}
       <Contacts />
       <CTA />
       <Footer />

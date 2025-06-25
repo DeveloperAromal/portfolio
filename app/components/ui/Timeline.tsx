@@ -1,6 +1,9 @@
 "use client";
 import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface TimelineEntry {
   title: string;
@@ -11,6 +14,32 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const headerRef = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: headerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    tl.fromTo(
+      headerRef.current,
+      {
+        x: 250,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power1.inOut",
+      }
+    );
+  });
 
   useEffect(() => {
     if (ref.current) {
@@ -29,8 +58,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full font-sans md:px-10" ref={containerRef}>
-      <div className="max-w-7xl mx-auto py-10">
-        <h2 className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] text-right font-bold tracking-tight text-stroke-3 text-black">
+      <div className="max-w-7xl mx-auto pt-10">
+        <h2
+          ref={headerRef}
+          className="text-[2.5rem] text-right px-6 sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-black"
+        >
           02. Original Story
         </h2>
       </div>

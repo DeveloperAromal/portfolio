@@ -1,6 +1,39 @@
+"use client";
+
+import { useGSAP } from "@gsap/react";
 import Image from "next/image";
+import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
 export default function Skills() {
+  const headerRef = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: headerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    tl.fromTo(
+      headerRef.current,
+      {
+        x: -250,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power1.inOut",
+      }
+    );
+  });
+
   const data = [
     { name: "ReactJS", url: "https://cdn.simpleicons.org/react" },
     { name: "NextJS", url: "https://cdn.simpleicons.org/nextdotjs/white" },
@@ -26,12 +59,24 @@ export default function Skills() {
     { name: "Expo", url: "https://cdn.simpleicons.org/expo/gray" },
     { name: "Clerk", url: "https://cdn.simpleicons.org/clerk" },
     { name: "Linux", url: "https://cdn.simpleicons.org/linux" },
+    { name: "Kali linux", url: "https://cdn.simpleicons.org/kalilinux" },
+    { name: "Supabase", url: "https://cdn.simpleicons.org/supabase" },
+    { name: "Flutter", url: "https://cdn.simpleicons.org/flutter" },
+    { name: "Golang", url: "https://cdn.simpleicons.org/go" },
+    { name: "C", url: "https://cdn.simpleicons.org/c" },
+    { name: "C#", url: "https://cdn.simpleicons.org/c#" },
+    { name: "C++", url: "https://cdn.simpleicons.org/c++" },
+    { name: "Python", url: "https://cdn.simpleicons.org/python" },
+    { name: "Django", url: "https://cdn.simpleicons.org/django" },
+    { name: "Flask", url: "https://cdn.simpleicons.org/flask/white" },
+    { name: "Javascript", url: "https://cdn.simpleicons.org/javascript" },
   ];
 
   return (
-    <section className="px-4 md:px-20 py-12 bg-black text-white">
+    <section className="px-4 md:px-20 py-12 bg-black text-white cursor">
       <h2
-        className=" text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] xl:text-[8rem] font-bold tracking-tight text-stroke-3 text-black pb-10"
+        ref={headerRef}
+        className="text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-black pb-10"
       >
         03. My Skills
       </h2>

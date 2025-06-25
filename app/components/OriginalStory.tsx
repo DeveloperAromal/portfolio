@@ -1,4 +1,3 @@
-import React from "react";
 import { Timeline } from "./ui/Timeline";
 import Image from "next/image";
 
