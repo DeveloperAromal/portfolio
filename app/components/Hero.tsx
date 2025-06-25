@@ -16,6 +16,10 @@ export default function Hero() {
       <div className="absolute bg-emerald-500 w-40 h-40 bottom-0 blur " />
       <div className="absolute bg-emerald-500 w-40 h-40 bottom-0 right-0 blur " />
       <div className="absolute bg-emerald-500 w-80 h-40 bottom-0 right-1/2 translate-x-1/2 rounded-full top-1/2 -translate-y-1/2 blur" />
+
+      {/* <div className="relative z-20">
+        <div className="w-24 absolute top-1/2 left-0 h-1 bg-linear-to-r from-white via-black to-transparent commet-animation" />
+      </div> */}
       <div className="relative h-60 w-full z-[19] mt-8">
         <div className="relative z-20 mx-auto mt-32 mb-2 flex max-w-full flex-col items-center justify-center px-3 md:mt-36 md:max-w-4xl lg:max-w-5xl">
           <Link
@@ -214,6 +218,10 @@ export default function Hero() {
           ></div>
         </div>
       </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-l from-black via-transparent to-transparent pointer-events-none" />
     </section>
   );
 }

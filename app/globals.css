@@ -97,3 +97,31 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.commet-animation {
+  animation: commet-animation 5s linear infinite;
+}
+
+@keyframes commet-animation {
+  0% {
+    transform: translate(-100, -100) rotate(deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(110vw, 110vh);
+    opacity: 0;
+  }
+}
