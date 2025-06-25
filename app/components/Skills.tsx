@@ -8,6 +8,7 @@ import gsap from "gsap";
 
 export default function Skills() {
   const headerRef = useRef(null);
+  const skillRef = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
@@ -23,6 +24,19 @@ export default function Skills() {
       headerRef.current,
       {
         x: -250,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power1.inOut",
+      }
+    );
+    tl.fromTo(
+      skillRef.current,
+      {
+        x: 250,
         opacity: 0,
       },
       {
@@ -80,7 +94,10 @@ export default function Skills() {
       >
         03. My Skills
       </h2>
-      <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-2 lg:gap-3">
+      <div
+        ref={skillRef}
+        className="mx-auto flex max-w-4xl flex-wrap justify-center gap-2 lg:gap-3"
+      >
         {data.map((tech, index) => (
           <span
             key={index}

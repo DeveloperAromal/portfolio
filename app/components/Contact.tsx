@@ -43,7 +43,7 @@ export default function Contacts() {
 
     tl.fromTo(
       inputRef.current,
-      { x: -250, opacity: 0 },
+      { x: 250, opacity: 0 },
       { x: 0, opacity: 1, duration: 1, ease: "power2.inOut" }
     );
   }, []);

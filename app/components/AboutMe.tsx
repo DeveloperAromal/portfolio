@@ -12,6 +12,7 @@ export default function AboutMe() {
   const headerRef = useRef(null);
   const paragraphRef = useRef(null);
   const imageRef = useRef(null);
+  const hireRef = useRef(null);
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -61,6 +62,14 @@ export default function AboutMe() {
           opacity: 0,
         },
         "-=0.6"
+      )
+      .from(
+        hireRef.current,
+        {
+          y: -150,
+          opacity: 0,
+        },
+        "-=0.6"
       );
   }, []);
 
@@ -69,9 +78,19 @@ export default function AboutMe() {
       <div>
         <h2
           ref={headerRef}
-          className="text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-black"
+          className="text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-black inline-flex"
         >
-          01. About Me
+          01. About Me{" "}
+          <span ref={hireRef} className="absolute -right-10 -top-10">
+            <Image
+              src="/icons/hiring-w.png"
+              alt="My Portrait"
+              width={150}
+              height={150}
+              className="object-cover hidden lg:block md:block rotate-img bg-white/5 rounded-full bg-clip-padding backdrop-filter backdrop-blur opacity-80"
+              loading="lazy"
+            />
+          </span>
         </h2>
 
         <div className="md:flex md:items-center md:lg:flex lg:items-center lg:justify-between lg:px-20 md:px-10">
@@ -85,6 +104,8 @@ export default function AboutMe() {
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-l from-black via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent pointer-events-none" />
           </div>
           <div className="flex items-center justify-center md:justify-between lg:justify-between gap-12 mt-10">
             <div
