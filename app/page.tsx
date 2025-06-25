@@ -2,7 +2,7 @@ import AboutMe from "./components/AboutMe";
 import Education from "./components/OriginalStory";
 import Hero from "./components/Hero";
 // import NavBar from "./components/includes/Nav";
-import Works from "./components/Works";
+// import Works from "./components/Works";
 import Contacts from "./components/Contact";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
