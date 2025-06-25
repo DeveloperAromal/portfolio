@@ -2,10 +2,11 @@
 
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
+import { Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
 
 export default function ParticleBackground() {
-  const particlesInit = useCallback(async (engine) => {
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
 
@@ -323,10 +324,7 @@ export default function ParticleBackground() {
               width: 1920,
               height: 1080,
             },
-            limit: {
-              mode: "delete",
-              value: 0,
-            },
+            limit: 0,
             value: 300,
           },
           opacity: {
