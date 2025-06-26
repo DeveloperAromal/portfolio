@@ -63,7 +63,7 @@ export default function Footer() {
       <div>
         <h2
           ref={shitRef}
-          className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] text-bold text-neutral-400 line-spacing-2 text-right pb-20"
+          className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] text-bold text-transparent bg-clip-text bg-linear-to-r from-zinc-400 via-neutral-500 to-zinc-800 line-spacing-2 text-right pb-20"
         >
           Let&apos;s start <br />
           this shit here
@@ -73,7 +73,10 @@ export default function Footer() {
             ref={quote1Ref}
             className="lg:w-40 lg:h-40 md:w-34 md:h-34 sm:w-20 sm:h-20 w-16 h-16 opacity-4 -mt-26"
           />
-          <span ref={ideaRef} className="text-neutral-500">
+          <span
+            ref={ideaRef}
+            className="text-transparent bg-clip-text bg-linear-to-r from-zinc-400 via-zinc-500 to-zinc-600 "
+          >
             I know good designs means good business{" "}
           </span>
           <Quote
@@ -84,7 +87,7 @@ export default function Footer() {
       </div>
       <h2
         ref={bottomNameRef}
-        className="sm:text-[3rem] md:text-[10rem] lg:text-[20rem] font-bold text-neutral-800 absolute bottom-0 translate-y-40 text-stroke-1 text-shadow"
+        className="sm:text-[3rem] md:text-[10rem] lg:text-[20rem] font-bold text-transparent bg-clip-text bg-linear-to-r from-zinc-400 via-neutral-500 to-zinc-800 absolute bottom-0 translate-y-45 text-stroke-1 text-shadow"
       >
         AROMAL
       </h2>
