@@ -26,6 +26,7 @@ export default function AboutMe() {
         toggleActions: "play none none none",
       },
     });
+    
     const mountTl = gsap.timeline({
       scrollTrigger: {
         trigger: paragraphRef.current,
