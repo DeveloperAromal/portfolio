@@ -87,7 +87,7 @@ export default function Skills() {
   ];
 
   return (
-    <section className="px-4 md:px-20 py-12 bg-black text-white cursor">
+    <section className="px-4 md:px-20 py-12 bg-black text-white">
       <h2
         ref={headerRef}
         className="text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-black pb-10"
