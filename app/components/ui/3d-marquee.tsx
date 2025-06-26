@@ -24,11 +24,11 @@ export const ThreeDMarquee = ({
       )}
     >
       <div className="relative z-50 backdrop-blur-3xl">
-        <div className="absolute top-1/2 left-1/2 transform translate-y-1/2 -translate-x-1/2 w-full max-w-4xl">
+        <div className="absolute top-1/2 left-1/2 transform translate-y-1/2 -translate-x-1/2 max-w-4xl w-full">
           <div>
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl md:text-4xl lg:text-4xl lg:max-w-2xl font-extrabold tracking-tight leading-tight text-center">
+                <h2 className="text-3xl md:text-4xl lg:text-4xl  font-extrabold tracking-tight leading-tight text-center">
                   FROM CONCEPT TO CREATION LET&apos;S MAKE IT HAPPEN!
                 </h2>
                 <br />
@@ -43,7 +43,7 @@ export const ThreeDMarquee = ({
                     </span>
                   </button>
                 </div>
-                <div className="lg:space-y-2 lg:mt-4   md:space-y-2 md:mt-4">
+                <div className="lg:space-y-2 lg:mt-4 md:space-y-2 md:mt-4">
                   <h3 className="text-lg font-semibold text-center">
                     I&apos;m available for full-time roles & freelance projects.
                   </h3>
@@ -58,7 +58,7 @@ export const ThreeDMarquee = ({
         </div>
       </div>
 
-      <div className="flex size-full items-center justify-center">
+      <div className="flex size-full items-center justify-center opacity-45">
         <div className="size-[1720px] shrink-0 scale-50 sm:scale-75 lg:scale-100">
           <div
             style={{
