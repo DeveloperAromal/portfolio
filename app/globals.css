@@ -88,14 +88,10 @@ body {
 
 .text-stroke-1 {
   -webkit-text-stroke: 1px rgb(6, 171, 119);
-  text-shadow: 10px #06ba4e;
 }
 
-.bg-image {
-  background-image: url("../public/assets/bg.jpg");
-  height: 70vh;
-  background-size: cover;
-  background-position: center;
+.text-shadow {
+  text-shadow: 1px 1px 40px rgb(6, 171, 119);
 }
 
 .rotate-img {

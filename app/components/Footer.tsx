@@ -59,11 +59,11 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-black text-white pt-16 pb-8 w-full relative h-[90vh] px-20">
-      <div className="pb-20">
+    <footer className="bg-black text-white pt-16 pb-8 w-full relative h-[100vh] px-20 ">
+      <div>
         <h2
           ref={shitRef}
-          className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] text-bold text-neutral-400 line-spacing-2 text-right"
+          className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] text-bold text-neutral-400 line-spacing-2 text-right pb-20"
         >
           Let&apos;s start <br />
           this shit here
@@ -73,7 +73,9 @@ export default function Footer() {
             ref={quote1Ref}
             className="lg:w-40 lg:h-40 md:w-34 md:h-34 sm:w-20 sm:h-20 w-16 h-16 opacity-4 -mt-26"
           />
-          <span ref={ideaRef}>I know good designs means good business </span>
+          <span ref={ideaRef} className="text-neutral-500">
+            I know good designs means good business{" "}
+          </span>
           <Quote
             ref={quote2Ref}
             className="lg:w-40 lg:h-40 md:w-34 md:h-34 sm:w-20 sm:h-20 w-16 h-16 opacity-4"
@@ -82,7 +84,7 @@ export default function Footer() {
       </div>
       <h2
         ref={bottomNameRef}
-        className="sm:text-[3rem] md:text-[10rem] lg:text-[20rem] font-bold text-neutral-800 absolute bottom-0 translate-y-40 text-stroke-1"
+        className="sm:text-[3rem] md:text-[10rem] lg:text-[20rem] font-bold text-neutral-800 absolute bottom-0 translate-y-40 text-stroke-1 text-shadow"
       >
         AROMAL
       </h2>
