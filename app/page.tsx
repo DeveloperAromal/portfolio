@@ -1,6 +1,6 @@
 "use client";
 
-// import { useEffect } from "react";
+import { useEffect } from "react";
 
 import AboutMe from "./components/AboutMe";
 import Education from "./components/OriginalStory";
@@ -13,20 +13,20 @@ import Footer from "./components/Footer";
 import Skills from "./components/Skills";
 
 export default function Landing() {
-  //   useEffect(() => {
-  //     const handleSpeed = (e: WheelEvent) => {
-  //       e.preventDefault();
-  //       window.scrollBy({
-  //         top: e.deltaY * 0.2,
-  //         behavior: "auto",
-  //       });
-  //     };
-  //     window.addEventListener("wheel", handleSpeed, { passive: false });
+  useEffect(() => {
+    const handleSpeed = (e: WheelEvent) => {
+      e.preventDefault();
+      window.scrollBy({
+        top: e.deltaY * 0.2,
+        behavior: "auto",
+      });
+    };
+    window.addEventListener("wheel", handleSpeed, { passive: false });
 
-  //     return () => {
-  //       window.removeEventListener("wheel", handleSpeed);
-  //     };
-  //   }, []);
+    return () => {
+      window.removeEventListener("wheel", handleSpeed);
+    };
+  }, []);
 
   return (
     <main className="overflow-hidden cursor">
