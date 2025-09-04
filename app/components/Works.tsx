@@ -6,6 +6,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { works } from "../mock/mock";
+import { Github, Sparkle } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +42,7 @@ export default function Works() {
   return (
     <section className="px-6 sm:px-10 md:px-20 py-16">
       <h2
-        className={`text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] text-right font-bold tracking-tight text-stroke-3 text-white ${SmoochSansFont.className}`}
+        className={`text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-white ${SmoochSansFont.className}`}
       >
         04. Works
       </h2>
@@ -50,45 +51,70 @@ export default function Works() {
         ref={containerRef}
         className="relative mt-12 w-full h-[80vh] bg-neutral-950 rounded-4xl overflow-hidden border-2 border-stone-800"
       >
-        <div ref={scrollRef} className="flex flex-col gap-12 h-full w-full">
+        <div
+          ref={scrollRef}
+          className="flex flex-col gap-12 h-full w-full pb-20"
+        >
           {projects.map((project, i) => (
             <div
               key={i}
-              className="flex flex-col md:flex-row w-full min-h-[80vh] bg-neutral-950 rounded-4xl pt-4 p-4"
+              className="flex flex-col md:flex-row w-full min-h-[75vh] bg-neutral-950 rounded-4xl pt-4 p-4"
             >
-              {/* Image */}
-              <div className="relative w-full md:w-1/2 h-full rounded-2xl overflow-hidden hover:rotate-12 transition-all duration-300">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform"
-                />
-              </div>
+              <div className="relative w-full md:w-1/2 h-[75vh] rounded-2xl px-10 bg-gradient-to-tr from-zinc-700 to-neutral-900 overflow-hidden transition-all duration-300">
+                <div className="text-4xl pr-4 py-10 absolute">A Emergency responce app that saves millions of lives</div>
 
-              {/* Content */}
-              <div className="md:w-1/2 flex flex-col justify-between mt-20 md:pl-8">
-                <div className="flex gap-2">
-                  <div className="h-2 w-8 bg-amber-700 rounded-2xl mt-2"></div>
-                  <div>
-                    <h3 className="text-4xl font-bold text-gray-300 mb-4">
-                      {project.title}
-                    </h3>
-                    <p className="text-neutral-500 mb-4 max-w-lg">
-                      {project.description}
-                    </p>
-                  </div>
+                <div className="relative flex items-end justify-center w-full h-full overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-contain object-bottom"
+                  />
                 </div>
+              </div>
+              <div className="content___section md:w-1/2 flex flex-col justify-between mt-20 md:pl-8">
+                <div className="flex gap-2">
+                  <div
+                    className={`h-2 w-8 ${project.bg} rounded-2xl mt-2`}
+                  ></div>
+                  <div>
+                    <div className="headline___content">
+                      <h3 className="text-4xl font-bold text-gray-300 mb-4">
+                        {project.title}
+                      </h3>
+                      <p className="text-neutral-500 mb-4 max-w-lg">
+                        {project.description}
+                      </p>
+                    </div>
+                    <ul className="point___content">
+                      {project.points.map((point, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-neutral-400"
+                        >
+                          <Sparkle className={`w-3 h-3 ${project.text}`} />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-3 pt-10 tech___stack">
+                      {project.tech.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-cyan-500/5 px-3 py-1 text-sm gap-2 hover:bg-white/10"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
 
-                <div className="flex flex-wrap gap-3">
-                  {project.tech.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 px-3 py-1 text-sm gap-2 hover:bg-white/10"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                    <div className="cta___content mt-6">
+                      <button className="px-4 py-3 inline-flex items-center gap-2 bg-white rounded-2xl">
+                        <Github className="text-neutral-950 w-4 h-4" />
+                        <code className="text-neutral-950">View on github</code>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
