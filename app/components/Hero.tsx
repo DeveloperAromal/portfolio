@@ -13,13 +13,10 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden mb-10">
       <ParticleBackground />
-      <div className="absolute bg-emerald-500 w-40 h-40 bottom-0 blur " />
-      <div className="absolute bg-emerald-500 w-40 h-40 bottom-0 right-0 blur " />
-      <div className="absolute bg-emerald-500 w-80 h-40 bottom-0 right-1/2 translate-x-1/2 rounded-full top-1/2 -translate-y-1/2 blur" />
+      <div className="absolute bg-[#bc1ef1] w-40 h-40 bottom-0 blur " />
+      <div className="absolute bg-[#bc1ef1] w-40 h-40 bottom-0 right-0 blur " />
+      <div className="absolute bg-[#bc1ef1] w-80 h-40 bottom-0 right-1/2 translate-x-1/2 rounded-full top-1/2 -translate-y-1/2 blur" />
 
-      {/* <div className="relative z-20">
-        <div className="w-24 absolute top-1/2 left-0 h-1 bg-linear-to-r from-white via-black to-transparent commet-animation" />
-      </div> */}
       <div className="relative h-60 w-full z-[19] mt-8">
         <div className="relative z-20 mx-auto mt-32 mb-2 flex max-w-full flex-col items-center justify-center px-3 md:mt-36 md:max-w-4xl lg:max-w-5xl">
           <Link
@@ -34,24 +31,21 @@ export default function Hero() {
               style={{
                 maskImage: `linear-gradient(
                   -75deg,
-                  var(--primary) calc(var(--x) + 20%),
+                 #bc1ef1 calc(var(--x) + 20%),
                   transparent calc(var(--x) + 30%),
-                  var(--primary) calc(var(--x) + 100%)
+                 #bc1ef1 calc(var(--x) + 100%)
                 )`,
                 WebkitMaskImage: `linear-gradient(
                   -75deg,
-                  var(--primary) calc(var(--x) + 20%),
+                 #bc1ef1 calc(var(--x) + 20%),
                   transparent calc(var(--x) + 30%),
-                  var(--primary) calc(var(--x) + 100%)
+                 #bc1ef1 calc(var(--x) + 100%)
                 )`,
                 textShadow: `
                   rgba(255, 255, 255, 0.3) 0px 0px 10px,
                   rgba(255, 255, 255, 0.2) 0px 0px 20px,
                   rgba(255, 255, 255, 0.1) 0px 0px 30px
                 `,
-                // CSS custom properties should be set via style attribute
-                // But in React, setting --x directly requires defining it as a string key:
-                // ["--x"]: "-98.50952%",
                 transform: "none",
               }}
             >
@@ -200,10 +194,10 @@ export default function Hero() {
           }}
         >
           <div
-            className="absolute bottom-[167px] left-1/2 h-[111px] w-[787px] -translate-x-1/2 transform overflow-hidden bg-[radial-gradient(50%_50%_at_50%_50%,#5506ba_0%,rgba(10,10,10,0)_100%)] blur-[57px]"
+            className="absolute bottom-[167px] left-1/2 h-[111px] w-[787px] -translate-x-1/2 transform overflow-hidden bg-[radial-gradient(50%_50%_at_50%_50%,#bc1ef1%,rgba(10,10,10,0)_100%)] blur-[57px]"
             style={{
               background:
-                "radial-gradient(50% 50% at 50% 50%, #06ba4e 0%, rgba(10,10,10,0) 100%)",
+                "radial-gradient(50% 50% at 50% 50%, #bc1ef1 0%, rgba(10,10,10,0) 100%)",
               transform: "translateX(-61.0227px)",
             }}
           ></div>

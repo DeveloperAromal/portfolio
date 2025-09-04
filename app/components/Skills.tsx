@@ -5,6 +5,12 @@ import Image from "next/image";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { Smooch_Sans } from "next/font/google";
+
+const SmoochSansFont = Smooch_Sans({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Skills() {
   const headerRef = useRef(null);
@@ -90,7 +96,7 @@ export default function Skills() {
     <section className="px-4 md:px-20 py-12 bg-black text-white">
       <h2
         ref={headerRef}
-        className="text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-black pb-10"
+        className={`text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-white pb-10 ${SmoochSansFont.className}`}
       >
         03. My Skills
       </h2>

@@ -1,3 +1,5 @@
+"use client";
+
 import { Quote } from "lucide-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -87,7 +89,7 @@ export default function Footer() {
       </div>
       <h2
         ref={bottomNameRef}
-        className="sm:text-[3rem] md:text-[10rem] lg:text-[20rem] font-bold text-transparent bg-clip-text bg-linear-to-r from-zinc-400 via-neutral-500 to-zinc-800 absolute bottom-0 translate-y-45 text-stroke-1 text-shadow"
+        className="sm:text-[3rem] md:text-[10rem] lg:text-[20rem] font-bold text-transparent bg-clip-text bg-linear-to-r from-zinc-400 via-neutral-500 to-zinc-800 absolute bottom-0 translate-y-60 text-stroke-1 text-shadow"
       >
         AROMAL
       </h2>

@@ -4,7 +4,14 @@ import { ArrowUpRight } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { Smooch_Sans } from "next/font/google";
+
+const SmoochSansFont = Smooch_Sans({
+  subsets: ["latin"],
+  weight: "400",
+});
+
 
 export default function Contacts() {
   const headerRef = useRef(null);
@@ -49,56 +56,18 @@ export default function Contacts() {
   }, []);
 
   const sectionRef = useRef<HTMLDivElement>(null);
-  const cursorRef = useRef<HTMLImageElement>(null);
-  const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    const cursor = cursorRef.current;
-
-    const handleMouseControll = (e: MouseEvent) => {
-      if (!cursor || !section) return null;
-
-      const rect = section.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      cursor.style.transform = `translate(${x - 75}px, ${y - 75}px)`;
-    };
-
-    const handleMouseEnter = () => setVisible(true);
-    const handleMouseLeave = () => setVisible(false);
-
-    section?.addEventListener("mousemove", handleMouseControll);
-    section?.addEventListener("mouseenter", handleMouseEnter);
-    section?.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      section?.removeEventListener("mousemove", handleMouseControll);
-      section?.removeEventListener("mouseenter", handleMouseEnter);
-      section?.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
 
   return (
     <section
       ref={sectionRef}
       className="px-4 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-20 lg:py-20 relative"
     >
-      <img
-        ref={cursorRef}
-        src="/icons/hiring-w.png"
-        alt="My Portrait"
-        width={150}
-        height={150}
-        className={`object-cover  absolute hidden lg:block md:block  duration-100 transform transition-transform pointer-events-none ease-in-out ${
-          visible ? "opacity-100" : "opacity-0"
-        }`}
-      />
+
       <div>
         <h2
           ref={headerRef}
-          className="text-[3rem] text-right sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-black pb-10"
+          className={`${SmoochSansFont.className} text-[3rem] text-right sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-white pb-10 ${SmoochSansFont.className}`}
         >
           04. Contacts
         </h2>
