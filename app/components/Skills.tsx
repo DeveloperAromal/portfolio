@@ -100,6 +100,26 @@ export default function Skills() {
       >
         03. My Skills
       </h2>
+      <span className="absolute left-10 -40">
+        <Image
+          src="/assets/plus_doodle.svg"
+          alt="My Portrait"
+          width={150}
+          height={150}
+          className="object-cover"
+          loading="lazy"
+        />
+      </span>
+      <span className="absolute right-10 ">
+        <Image
+          src="/assets/star.svg"
+          alt="My Portrait"
+          width={50}
+          height={50}
+          className="object-cover"
+          loading="lazy"
+        />
+      </span>
       <div
         ref={skillRef}
         className="mx-auto flex max-w-4xl flex-wrap justify-center gap-2 lg:gap-3"
