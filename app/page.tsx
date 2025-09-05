@@ -33,7 +33,8 @@ export default function Landing() {
                     portfolio website, developer branding, GitHub projects, npm packages, package publishing, monorepo, Turborepo, Bun, PNPM,
                     testing Jest, Playwright, end‑to‑end testing, code quality, linting, TypeScript strict, Sentry, logging, observability,
                     feature flags, internationalization i18n, content SEO, technical SEO, structured data, Open Graph, Twitter cards,
-                    canonical URL, sitemap, robots metadata, 2025 SEO trends, entity SEO, topical authority, zero‑click SERP, long‑tail keywords, voice search, visual search
+                    canonical URL, sitemap, robots metadata, 2025 SEO trends, entity SEO, topical authority, zero‑click SERP, long‑tail keywords, voice search, 
+                    visual search, developeraromal, DeveloperAromal, Developer Aromal, developer aromal, aromals
                 `}
         canonical="https://www.aromals.com/"
       />
