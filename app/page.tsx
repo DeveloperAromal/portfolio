@@ -7,15 +7,17 @@ import Contacts from "./components/Contact";
 // import Footer from "./components/Footer";
 import Skills from "./components/Skills";
 import  WhatIDo  from "./components/WhatIDo";
+import { News } from "./components/News";
 
 export default function Landing() {
 
   return (
-    <main className="overflow-hidden" suppressHydrationWarning>
+    <main suppressHydrationWarning>
       {/* <NavBar /> */}
       <Hero />
       <AboutMe />
       <WhatIDo />
+      <News />
       {/* <OriginalStory /> */}
       <Skills />
       <Works />
