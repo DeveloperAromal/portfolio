@@ -6,11 +6,10 @@ import Contacts from "./components/Contact";
 // import CTA from "./components/CTA";
 // import Footer from "./components/Footer";
 import Skills from "./components/Skills";
-import  WhatIDo  from "./components/WhatIDo";
-import { News } from "./components/News";
-
+import WhatIDo from "./components/WhatIDo";
+import News from "./components/News";
+import { Analytics } from "@vercel/analytics/next";
 export default function Landing() {
-
   return (
     <main suppressHydrationWarning>
       {/* <NavBar /> */}
@@ -24,6 +23,7 @@ export default function Landing() {
       <Contacts />
       {/* <CTA />
       <Footer /> */}
+      <Analytics />
     </main>
   );
 }

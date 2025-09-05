@@ -6,7 +6,7 @@ const SmoochSansFont = Smooch_Sans({
   weight: "400",
 });
 
-export function News() {
+export default function News() {
   return (
     <section className="px-4 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-20 lg:py-20 relative">
       <div>
