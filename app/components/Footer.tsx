@@ -1,98 +1,110 @@
 "use client";
 
-import { Quote } from "lucide-react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { ArrowRight } from "lucide-react";
+import localFont from "next/font/local";
+import Image from "next/image";
+const asimovian = localFont({
+  src: "../../public/fonts/Asimovian-Regular.ttf",
+  weight: "400",
+  style: "normal",
+});
 
 export default function Footer() {
-  gsap.registerPlugin(ScrollTrigger);
-  const quote1Ref = useRef(null);
-  const quote2Ref = useRef(null);
-  const bottomNameRef = useRef(null);
-  const shitRef = useRef(null);
-  const ideaRef = useRef(null);
-
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      defaults: {
-        duration: 1,
-        ease: "power2.inOut",
-      },
-      scrollTrigger: {
-        trigger: shitRef.current,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-    });
-    tl.from(shitRef.current, {
-      x: 250,
-      opacity: 0,
-    })
-      .from(
-        quote1Ref.current,
-        {
-          y: 250,
-          opacity: 0,
-        },
-        "-=0.6"
-      )
-      .from(
-        ideaRef.current,
-        {
-          x: -250,
-          opacity: 0,
-        },
-        "-=0.6"
-      )
-      .from(
-        quote2Ref.current,
-        {
-          y: -250,
-          opacity: 0,
-        },
-        "-=0.6"
-      )
-      .from(bottomNameRef.current, {
-        y: 250,
-        opacity: 0,
-      });
-  }, []);
-
   return (
-    <footer className="bg-black text-white pt-16 pb-8 w-full relative h-[100vh] px-20 ">
+    <footer className="bg-black text-white pt-16 w-full px-20 relative  max-h-[80vh]">
+      <span className="absolute bottom-6 left-6">
+        <Image
+          src="/assets/plus_doodle.svg"
+          alt="Plus Doodle"
+          width={120}
+          height={120}
+          className="object-contain opacity-80"
+          loading="lazy"
+        />
+      </span>
+
+      <span className="absolute bottom-10 right-10">
+        <Image
+          src="/assets/star.svg"
+          alt="Star Doodle"
+          width={60}
+          height={60}
+          className="object-contain opacity-80"
+          loading="lazy"
+        />
+      </span>
+
+      <span className="absolute top-10 right-10">
+        <Image
+          src="/assets/star.svg"
+          alt="Star Doodle"
+          width={60}
+          height={60}
+          className="object-contain opacity-80"
+          loading="lazy"
+        />
+      </span>
+      <div className="flex justify-between">
+        <div className="flex gap-20">
+          <div>
+            <ul>
+              <li>Home</li>
+              <li>About </li>
+              <li>Service</li>
+              <li>Works</li>
+              <li>Experience</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>Home</li>
+              <li>About </li>
+              <li>Service</li>
+              <li>Works</li>
+              <li>Experience</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>Home</li>
+              <li>About </li>
+              <li>Service</li>
+              <li>Works</li>
+              <li>Experience</li>
+            </ul>
+          </div>
+        </div>{" "}
+        <div>
+          <div className="max-w-2xl">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+            corporis sunt ut quos vel optio vitae a delectus blanditiis velit
+            cumque, quae voluptatum veniam officiis. Culpa pariatur perferendis
+            dolorum voluptatum facere.
+          </div>
+          <div className="flex gap-10 pt-10">
+            <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-black/30 bg-black/20 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3 dark:border-white/10 dark:bg-white/10">
+              <span className="z-10 px-3 text-black transition-colors duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                Let&apos;s Accelleratte
+              </span>
+              <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 dark:bg-white"></span>
+              <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-black p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5 dark:bg-white">
+                <ArrowRight className="lucide lucide-arrow-right text-black transition-all duration-300 dark:text-black" />
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-between pt-10">
+        <div>
+          <p>© Aromal S {new Date().getFullYear()}. All rights reserved</p>
+        </div>
+        <div>Linkedin . Instagram . LeetCode . Dev.to .</div>
+      </div>
       <div>
-        <h2
-          ref={shitRef}
-          className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] text-bold text-transparent bg-clip-text bg-linear-to-r from-zinc-400 via-neutral-500 to-zinc-800 line-spacing-2 text-right pb-20"
-        >
-          Let&apos;s start <br />
-          this shit here
-        </h2>
-        <h2 className="text-[1rem] sm:text-[2rem] md:text-[2rem] lg:text-[2rem] text-bold text-neutral-400 line-spacing-2 text-right inline-flex">
-          <Quote
-            ref={quote1Ref}
-            className="lg:w-40 lg:h-40 md:w-34 md:h-34 sm:w-20 sm:h-20 w-16 h-16 opacity-4 -mt-26"
-          />
-          <span
-            ref={ideaRef}
-            className="text-transparent bg-clip-text bg-linear-to-r from-zinc-400 via-zinc-500 to-zinc-600 "
-          >
-            I know good designs means good business{" "}
-          </span>
-          <Quote
-            ref={quote2Ref}
-            className="lg:w-40 lg:h-40 md:w-34 md:h-34 sm:w-20 sm:h-20 w-16 h-16 opacity-4"
-          />
+        <h2 className={`text-[20rem] text-center ${asimovian.className}`}>
+          aromal
         </h2>
       </div>
-      <h2
-        ref={bottomNameRef}
-        className="sm:text-[3rem] md:text-[10rem] lg:text-[20rem] font-bold text-transparent bg-clip-text bg-linear-to-r from-zinc-400 via-neutral-500 to-zinc-800 absolute bottom-0 translate-y-60 text-stroke-1 text-shadow"
-      >
-        AROMAL
-      </h2>
     </footer>
   );
 }
