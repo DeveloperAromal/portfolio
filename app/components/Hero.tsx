@@ -82,10 +82,10 @@ export default function Hero() {
               <div className="group relative z-300">
                 <div className="mx-2 w-16 cursor-pointer overflow-hidden rounded-3xl md:w-20 lg:mx-3">
                   <Image
-                    src="/assets/my_img.png"
+                    src="/assets/Aromal_clean.jpg"
                     alt="j"
                     width={100}
-                    height={100}
+                    height={50}
                   />
                 </div>
                 <svg
