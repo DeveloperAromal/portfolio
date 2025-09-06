@@ -1,8 +1,9 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import localFont from "next/font/local";
 import Image from "next/image";
+import localFont from "next/font/local";
+
 const asimovian = localFont({
   src: "../../public/fonts/Asimovian-Regular.ttf",
   weight: "400",
@@ -11,7 +12,8 @@ const asimovian = localFont({
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white pt-16 w-full px-20 relative  max-h-[80vh]">
+    <footer className="bg-black text-white w-full px-20 relative">
+      <hr className="text-neutral-900 pb-10" />
       <span className="absolute bottom-6 left-6">
         <Image
           src="/assets/plus_doodle.svg"
@@ -75,11 +77,12 @@ export default function Footer() {
           </div>
         </div>{" "}
         <div>
-          <div className="max-w-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            corporis sunt ut quos vel optio vitae a delectus blanditiis velit
-            cumque, quae voluptatum veniam officiis. Culpa pariatur perferendis
-            dolorum voluptatum facere.
+          <div className="max-w-2xl text-2xl">
+            Because I know that{" "}
+            <mark className="bg-cyan-300/20 text-white p-1 py-1">
+              <i> good design drives good business</i>
+            </mark>{" "}
+            , let’s begin the journey.
           </div>
           <div className="flex gap-10 pt-10">
             <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-black/30 bg-black/20 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3 dark:border-white/10 dark:bg-white/10">
@@ -94,7 +97,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex justify-between pt-10">
+      <div className="flex justify-between mt-10">
         <div>
           <p>© Aromal S {new Date().getFullYear()}. All rights reserved</p>
         </div>

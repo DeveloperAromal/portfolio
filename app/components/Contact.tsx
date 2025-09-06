@@ -6,7 +6,13 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { Smooch_Sans } from "next/font/google";
+import localFont from "next/font/local";
 
+const asimovian = localFont({
+  src: "../../public/fonts/Asimovian-Regular.ttf",
+  weight: "400",
+  style: "normal",
+});
 const SmoochSansFont = Smooch_Sans({
   subsets: ["latin"],
   weight: "400",
@@ -63,7 +69,6 @@ export default function Contacts() {
       ref={sectionRef}
       className="px-4 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-20 lg:py-20 relative"
     >
-
       <div>
         <h2
           ref={headerRef}
@@ -82,7 +87,7 @@ export default function Contacts() {
             </h3>
             <p
               ref={letsparaRef}
-              className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400"
+              className={`text-sm sm:text-base text-neutral-600 dark:text-neutral-400 ${asimovian.className}`}
             >
               If you’d like to collaborate, hire me, or just say hi — feel free
               to reach out using the form or via direct contact info below.
