@@ -98,7 +98,7 @@ export default function Skills() {
         ref={headerRef}
         className={`text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-right text-white pb-10 ${SmoochSansFont.className}`}
       >
-        03. My Skills
+        04. My Skills
       </h2>
       <span className="absolute left-10 -40">
         <Image

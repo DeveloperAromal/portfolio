@@ -74,7 +74,7 @@ export default function Contacts() {
           ref={headerRef}
           className={`${SmoochSansFont.className} text-[3rem] text-right sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-white pb-10 ${SmoochSansFont.className}`}
         >
-          04. Contacts
+          06. Contacts
         </h2>
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">

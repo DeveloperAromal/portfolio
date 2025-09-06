@@ -25,7 +25,7 @@ export default function WhatIDo() {
         // ref={headerRef}
         className={`${SmoochSansFont.className} text-[3rem] text-right sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 px-14 text-white pb-10 ${SmoochSansFont.className}`}
       >
-        04. What I Do
+        02. What I Do
       </h2>
 
       <BentoGrid className="mx-auto md:auto-rows-[20rem]">

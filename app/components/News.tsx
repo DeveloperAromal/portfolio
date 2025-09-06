@@ -14,7 +14,7 @@ export default function News() {
           // ref={headerRef}
           className={`${SmoochSansFont.className} text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 px-14 text-white pb-10 ${SmoochSansFont.className}`}
         >
-          04. On the News
+          03. On the News
         </h2>
         <VideoDialog
           className="block dark:hidden"
@@ -31,9 +31,9 @@ export default function News() {
           thumbnailAlt="Video"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-l from-black via-transparent to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-l from-black/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent pointer-events-none" />
     </section>
   );
 }

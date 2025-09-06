@@ -44,7 +44,7 @@ export default function Works() {
       <h2
         className={`text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-white ${SmoochSansFont.className}`}
       >
-        04. Works
+        05. Works
       </h2>
 
       <div

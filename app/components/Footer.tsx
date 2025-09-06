@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import localFont from "next/font/local";
 
@@ -101,7 +101,9 @@ export default function Footer() {
         <div>
           <p>© Aromal S {new Date().getFullYear()}. All rights reserved</p>
         </div>
-        <div>Linkedin . Instagram . LeetCode . Dev.to .</div>
+        <div className="flex gap-6">
+          <Github /> <Linkedin /> <Instagram /> <Twitter />
+        </div>
       </div>
       <div>
         <h2 className={`text-[20rem] text-center ${asimovian.className}`}>
