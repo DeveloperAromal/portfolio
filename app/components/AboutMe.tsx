@@ -83,12 +83,20 @@ export default function AboutMe() {
   return (
     <section className="px-6 md:px-20 py-16">
       <div>
-        <h2
-          ref={headerRef}
-          className={`text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-white inline-flex ${SmoochSansFont.className}`}
-        >
-          01. About Me{" "}
-        </h2>
+        <div className="flex justify-between items-center">
+          <h2
+            ref={headerRef}
+            className={`text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-white inline-flex ${SmoochSansFont.className}`}
+          >
+            01. About Me{" "}
+          </h2>
+          <div className="max-w-2xl">
+            <p className="flex text-neutral- text-xs pb-1 tracking-widest opacity-60">
+              [ Passion in Pixels ]
+            </p>
+            <hr className="text-neutral-800 pb-10" />
+          </div>
+        </div>
 
         <div className="md:flex md:items-center md:lg:flex lg:items-center lg:justify-between lg:px-20 md:px-10">
           <div ref={imageRef}>
