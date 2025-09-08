@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -70,12 +70,20 @@ export default function Contacts() {
       className="px-4 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-20 lg:py-20 relative"
     >
       <div>
-        <h2
-          ref={headerRef}
-          className={`${SmoochSansFont.className} text-[3rem] text-right sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-white pb-10 ${SmoochSansFont.className}`}
-        >
-          06. Contacts
-        </h2>
+        <div className="flex justify-between items-center">
+          <div className="max-w-2xl">
+            <p className="flex text-neutral- text-xs pb-1 tracking-widest opacity-60">
+              [ Drop me a line ]
+            </p>
+            <hr className="text-neutral-800 pb-10" />
+          </div>
+          <h2
+            ref={headerRef}
+            className={`${SmoochSansFont.className} text-[3rem] text-right sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-white pb-10 ${SmoochSansFont.className}`}
+          >
+            06. Contact
+          </h2>
+        </div>
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="space-y-4">
@@ -118,15 +126,13 @@ export default function Contacts() {
                 to get things started.
               </p>
             </div>
-            <button
-              type="submit"
-              className="cursor-pointer bg-transparent text-white hover:bg-white/5 duration-300 transform transition-transform ease-in hover:text-white dark:text-white rounded-4xl group"
-            >
-              <span className="flex items-center gap-1 text-lg sm:text-xl px-2 py-2">
-                <code>- Send info</code>
-                <span className="group-hover:bg-white rounded-full py-2 px-2 duration-300 transform transition-transform">
-                  <ArrowUpRight className="duration-300 group-hover:rotate-45 w-6 h-6 rounded-full transform transition-transform group-hover:text-black" />
-                </span>
+            <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-black/30 bg-black/20 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3 dark:border-white/10 dark:bg-white/10">
+              <span className="z-10 px-3 text-black transition-colors duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                Send Info
+              </span>
+              <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 dark:bg-white"></span>
+              <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-black p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5 dark:bg-white">
+                <ArrowRight className="lucide lucide-arrow-right text-black transition-all duration-300 dark:text-black" />
               </span>
             </button>
           </form>
