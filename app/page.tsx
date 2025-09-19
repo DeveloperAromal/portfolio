@@ -14,7 +14,7 @@ import { Analytics } from "@vercel/analytics/next";
 export default function Landing() {
   return (
     <>
-      <main suppressHydrationWarning>
+      <main suppressHydrationWarning={true} className="overflow-hidden">
         {/* <NavBar /> */}
         <Hero />
         <AboutMe />
