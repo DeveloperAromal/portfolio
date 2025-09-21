@@ -81,7 +81,7 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <section className="px-6 md:px-20 py-16">
+    <section className="px-6 md:px-20 py-8 mg:py-16 lg:py-16">
       <div>
         <div className="flex justify-between items-center">
           <h2
