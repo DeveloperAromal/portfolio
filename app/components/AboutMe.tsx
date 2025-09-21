@@ -2,11 +2,13 @@
 
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { Smooch_Sans } from "next/font/google";
+import { useRouter } from "next/navigation";
 
 const SmoochSansFont = Smooch_Sans({
   subsets: ["latin"],
@@ -19,6 +21,8 @@ export default function AboutMe() {
   const paragraphRef = useRef(null);
   const imageRef = useRef(null);
   const hireRef = useRef(null);
+
+  const router = useRouter();
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -80,6 +84,10 @@ export default function AboutMe() {
       );
   }, []);
 
+  const handleView = () => {
+    router.push("/hire/view-resume");
+  };
+
   return (
     <section className="px-6 md:px-20 py-8 mg:py-16 lg:py-16">
       <div>
@@ -133,13 +141,13 @@ export default function AboutMe() {
                   sleek, scalable digital products that blend design and
                   functionality. My journey began with a personal project that
                   unexpectedly scaled, inspiring me to focus on creating
-                  powerful, user-focused web experiences with React, Node.js,
+                  powerful, user focused web experiences with React, Node.js,
                   and more.
                 </p>
                 <br />
                 <p>
                   My mission is simple: make tech intuitive and enjoyable. I
-                  believe in code that not only works, but inspires—and
+                  believe in code that not only works, but inspires and
                   that&apos;s exactly what I strive to deliver, one project at a
                   time.
                 </p>
@@ -155,14 +163,20 @@ export default function AboutMe() {
                       <ArrowRight className="lucide lucide-arrow-right text-black transition-all duration-300 dark:text-black" />
                     </span>
                   </button>
-                  <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full py-[3px] pr-[3px] pl-2 text-base font-medium transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3">
-                    <span className="z-10 text-white transition-colors duration-300 group-hover:text-white dark:text-white ">
-                      View Resume
-                    </span>
-                    <span className="z-10 flex items-center justify-center overflow-hidden p-2 md:p-2.5">
-                      <ArrowUpRight className="lucide lucide-arrow-right text-white transition-all duration-300 group-hover:rotate-45 " />
-                    </span>
-                  </button>
+                  <Link
+                    href="/assets/Aromal_Resume.pdf"
+                    download={true}
+                    onClick={handleView}
+                  >
+                    <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full py-[3px] pr-[3px] pl-2 text-base font-medium transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3">
+                      <span className="z-10 text-white transition-colors duration-300 group-hover:text-white dark:text-white ">
+                        View Resume
+                      </span>
+                      <span className="z-10 flex items-center justify-center overflow-hidden p-2 md:p-2.5">
+                        <ArrowUpRight className="lucide lucide-arrow-right text-white transition-all duration-300 group-hover:rotate-45 " />
+                      </span>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

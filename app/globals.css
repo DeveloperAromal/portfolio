@@ -135,3 +135,8 @@ body {
     opacity: 0;
   }
 }
+
+body::selection{
+  color: #bc1ef1;
+  
+}
