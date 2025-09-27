@@ -99,16 +99,16 @@ export default function VideoDialog({
           alt={thumbnailAlt}
           width={1720}
           height={1080}
-          className="max-w-[3xl] h-[90vh] object-cover rounded-md border shadow-lg transition-all duration-200 ease-out group-hover:brightness-[0.8]"
+          className="max-w-[3xl] lg:h-[90vh] md:h-90vh h-30vh object-cover rounded-md border shadow-lg transition-all duration-200 ease-out group-hover:brightness-[0.8]"
         />
 
         <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100">
-          <div className="flex size-28 items-center justify-center rounded-full bg-primary/10 backdrop-blur-md">
+          <div className="flex size-16 lg:size-28 md:size-28 items-center justify-center rounded-full bg-primary/10 backdrop-blur-md">
             <div
-              className={`relative flex size-20 scale-100 items-center justify-center rounded-full bg-gradient-to-b from-primary/30 to-primary shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}
+              className={`relative flex size-10 scale-100 items-center justify-center rounded-full bg-gradient-to-b from-primary/30 to-primary shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}
             >
               <Play
-                className="size-8 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105"
+                className="size-4 lg:size-8 md:size-8 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105"
                 style={{
                   filter:
                     "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
