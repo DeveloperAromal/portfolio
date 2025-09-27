@@ -20,48 +20,77 @@ const projects = works;
 export default function Works() {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (!scrollRef.current || !containerRef.current) return;
 
-    const cards = gsap.utils.toArray(scrollRef.current.children);
-    const cardHeight = (cards[0] as HTMLElement)?.offsetHeight || 0;
-    const pinDuration = cards.length * cardHeight;
+    const mm = gsap.matchMedia();
 
-    gsap.to(cards, {
-      yPercent: -100 * (cards.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "center center",
-        end: "+=" + pinDuration,
-        scrub: true,
-        pin: true,
-      },
+    mm.add("(min-width: 768px)", () => {
+      const cards = gsap.utils.toArray(scrollRef.current!.children);
+      const cardHeight = (cards[0] as HTMLElement)?.offsetHeight || 0;
+      const pinDuration = cards.length * cardHeight;
+
+      const tween = gsap.to(cards, {
+        yPercent: -100 * (cards.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "center center",
+          end: "+=" + pinDuration,
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      return () => {
+        if (tween.scrollTrigger) tween.scrollTrigger.kill();
+        tween.kill();
+      };
     });
+
+    mm.add("(max-width: 767px)", () => {
+      if (containerRef.current) {
+        ["height", "overflow", "position", "top", "transform", "left"].forEach(
+          (s) => containerRef.current!.style.removeProperty(s)
+        );
+      }
+      if (scrollRef.current) {
+        Array.from(scrollRef.current.children).forEach((c) => {
+          (c as HTMLElement).style.removeProperty("transform");
+          (c as HTMLElement).style.removeProperty("position");
+          (c as HTMLElement).style.removeProperty("top");
+          (c as HTMLElement).style.removeProperty("left");
+        });
+      }
+
+      return () => {};
+    });
+
+    return () => mm.revert();
   }, []);
   return (
     <section className="px-6 sm:px-10 md:px-20 py-16">
       <h2
-        className={`text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 text-white ${SmoochSansFont.className}`}
+        className={`text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-white ${SmoochSansFont.className}`}
       >
         05. Works
       </h2>
 
       <div
         ref={containerRef}
-        className="relative mt-12 w-full h-[80vh] bg-neutral-950 rounded-4xl overflow-hidden border-2 border-stone-800"
+        className="relative mt-12 w-full h-auto md:h-[80vh] bg-transparent md:bg-neutral-950 lg:bg-neutral-950 rounded-4xl overflow-visible md:overflow-hidden lg:border-2 md:border-2 border-0 border-stone-800"
       >
-        <div
-          ref={scrollRef}
-          className="flex flex-col gap-12 h-full w-full pb-20"
-        >
+        <div ref={scrollRef} className="flex flex-col gap-12 w-full pb-20">
           {projects.map((project, i) => (
             <div
               key={i}
-              className="flex flex-col md:flex-row w-full min-h-[75vh] bg-neutral-950 rounded-4xl pt-4 p-4"
+              className="flex flex-col md:flex-row w-full min-h-0 md:min-h-[75vh] bg-neutral-950 rounded-4xl pt-4 p-4"
             >
-              <div className="relative w-full md:w-1/2 h-[75vh] rounded-2xl px-10 bg-gradient-to-tr from-zinc-700 to-neutral-900 overflow-hidden transition-all duration-300">
-                <div className="text-4xl pr-4 py-10 absolute">A Emergency responce app that saves millions of lives</div>
+              <div className="relative w-full md:w-1/2 h-64 md:h-[75vh] rounded-2xl px-4 sm:px-10 bg-gradient-to-tr from-zinc-700 to-neutral-900 overflow-hidden transition-all duration-300">
+                <div className="text-lg lg:block md:block hidden sm:text-2xl md:text-4xl pr-4 py-4 sm:py-10 absolute top-4 left-4 sm:top-8 sm:left-8">
+                  A Emergency responce app that saves millions of lives
+                </div>
 
                 <div className="relative flex items-end justify-center w-full h-full overflow-hidden">
                   <Image
@@ -69,20 +98,21 @@ export default function Works() {
                     alt={project.title}
                     fill
                     className="object-contain object-bottom"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
               </div>
-              <div className="content___section md:w-1/2 flex flex-col justify-between mt-20 md:pl-8">
+              <div className="content___section md:w-1/2 flex flex-col justify-between mt-8 md:mt-0 md:pl-8 px-2 sm:px-6">
                 <div className="flex gap-2">
                   <div
                     className={`h-2 w-8 ${project.bg} rounded-2xl mt-2`}
                   ></div>
                   <div>
                     <div className="headline___content">
-                      <h3 className="text-4xl font-bold text-gray-300 mb-4">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-300 mb-4">
                         {project.title}
                       </h3>
-                      <p className="text-neutral-500 mb-4 max-w-lg">
+                      <p className="text-neutral-500 mb-4 max-w-full md:max-w-lg">
                         {project.description}
                       </p>
                     </div>
@@ -101,7 +131,7 @@ export default function Works() {
                       {project.tech.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-cyan-500/5 px-3 py-1 text-sm gap-2 hover:bg-white/10"
+                          className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-cyan-500/5 px-2 py-1 text-xs sm:text-sm gap-2 hover:bg-white/10"
                         >
                           {tech}
                         </span>
@@ -109,7 +139,7 @@ export default function Works() {
                     </div>
 
                     <div className="cta___content mt-6">
-                      <button className="px-4 py-3 inline-flex items-center gap-2 bg-white rounded-2xl">
+                      <button className="px-3 py-2 inline-flex items-center gap-2 bg-white rounded-2xl text-sm">
                         <Github className="text-neutral-950 w-4 h-4" />
                         <code className="text-neutral-950">View on github</code>
                       </button>
