@@ -3,6 +3,12 @@
 import Image from "next/image";
 import ParticleBackground from "./ui/ParticleBackground";
 import { HeroReleaseNote } from "./ui/HeroReleaseNote";
+import { Cormorant } from "next/font/google";
+
+const CormorantFont = Cormorant({
+  subsets: ["latin"],
+  weight: "600",
+});
 
 export default function Hero() {
   const handleCopy = () => {
@@ -25,7 +31,9 @@ export default function Hero() {
             <span className="md:text-nowrap">I help founders turn ideas</span>
             <br className="hidden md:block" />
             into seamless{" "}
-            <span className="font-nyght bg-linear-to-b from-zinc-500 via-zinc-600 to-zinc-900 bg-clip-text font-light tracking-wide text-transparent dark:from-zinc-700 dark:via-zinc-200 dark:to-zinc-50">
+            <span
+              className={`bg-linear-to-b from-zinc-500 via-zinc-600 to-zinc-900 bg-clip-text font-light tracking-wide text-transparent dark:from-zinc-700 dark:via-zinc-200 dark:to-zinc-50 ${CormorantFont.className}`}
+            >
               digital experiences
             </span>
           </h2>

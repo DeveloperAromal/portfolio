@@ -10,10 +10,10 @@ export default function News() {
   return (
     <section className="px-4 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-20 lg:py-20 relative">
       <div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-20">
           <h2
             // ref={headerRef}
-            className={`${SmoochSansFont.className} text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 px-14 text-white pb-10 ${SmoochSansFont.className}`}
+            className={`${SmoochSansFont.className} text-[3rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3  text-white pb-10 ${SmoochSansFont.className}`}
           >
             03. On the News
           </h2>

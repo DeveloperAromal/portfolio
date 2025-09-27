@@ -97,9 +97,9 @@ export default function VideoDialog({
         <Image
           src={thumbnailSrc}
           alt={thumbnailAlt}
-          width={1920}
+          width={1720}
           height={1080}
-          className="max-w-[4xl] h-[90vh] object-cover rounded-md border shadow-lg transition-all duration-200 ease-out group-hover:brightness-[0.8]"
+          className="max-w-[3xl] h-[90vh] object-cover rounded-md border shadow-lg transition-all duration-200 ease-out group-hover:brightness-[0.8]"
         />
 
         <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100">

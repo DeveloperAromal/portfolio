@@ -23,12 +23,12 @@ export default function WhatIDo() {
     <section className="px-4 py-8 sm:px-8 sm:py-16 md:px-16 lg:px-20 lg:py-20">
       <h2
         // ref={headerRef}
-        className={`${SmoochSansFont.className} text-[3rem] text-right sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-stroke-3 px-14 text-white pb-10 ${SmoochSansFont.className}`}
+        className={`${SmoochSansFont.className} text-[3rem] text-right sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight  text-white pb-10 ${SmoochSansFont.className}`}
       >
         02. What I Do
       </h2>
 
-      <BentoGrid className="mx-auto md:auto-rows-[20rem]">
+      <BentoGrid className="max-w-[90rem] md:auto-rows-[20rem]">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
