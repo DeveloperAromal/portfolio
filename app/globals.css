@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.aurora {
+  width: 300px;
+  height: 600px;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at 30% 30%, #000000cd, transparent),
+    radial-gradient(circle at 70% 70%, #bc1ef1, transparent);
+  filter: blur(80px);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: auroraMove 10s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMove {
+  0% {
+    transform: rotate(45deg) translate(0px, 0px) scale(1);
+    background-position: 30% 30%, 70% 70%;
+  }
+
+  50% {
+    transform: rotate(50deg) translate(20px, -10px) scale(1.05);
+    background-position: 35% 35%, 65% 65%;
+  }
+
+  100% {
+    transform: rotate(40deg) translate(-20px, 10px) scale(1);
+    background-position: 25% 25%, 75% 75%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.cursor {
+  cursor: url("../public/icons/cursor.png"), auto;
+}
+
+.invert {
+  filter: invert(-1) hue-rotate(180deg);
+  transition: filter 0.2s ease;
+}
+
+.hire-me-cursor {
+  cursor: url("../public/icons/hiring-w.png"), 16, 16, auto;
+}
+
+.line-spacing-2 {
+  line-height: 90px;
+}
+
+.blur {
+  filter: blur(500px)
+}
+
+.text-stroke-3 {
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+
+.text-stroke-1 {
+  -webkit-text-stroke: 1px rgb(6, 171, 119);
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 40px rgb(6, 171, 119);
+}
+
+.rotate-img {
+  animation: rotation 5s linear infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.commet-animation {
+  animation: commet-animation 5s linear infinite;
+}
+
+@keyframes commet-animation {
+  0% {
+    transform: translate(-100, -100) rotate(deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(110vw, 110vh);
+    opacity: 0;
+  }
+}
+
+body::selection{
+  color: #bc1ef1;
+  
+}
