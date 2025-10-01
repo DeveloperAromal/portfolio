@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "Aromal S Portfolio",
     images: [
       {
-        url: "https://www.aromals.com/og-image.jpg",
+        url: "https://avatars.githubusercontent.com/u/153208245?v=4",
         width: 1200,
         height: 630,
         alt: "Aromal S Portfolio",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "Aromal S | Full-Stack Developer",
     description:
       "Full-stack developer specializing in Next.js, React Native, AI, and cybersecurity. Creator of LinkLens (NPM).",
-    images: ["https://www.aromals.com/og-image.jpg"],
+    images: ["https://avatars.githubusercontent.com/u/153208245?v=4"],
     creator: "@AromalSDev",
   },
   robots: {
@@ -83,9 +83,9 @@ const structuredData = {
   jobTitle: "Full-Stack Developer",
   url: "https://www.aromals.com/",
   sameAs: [
-    "https://github.com/AromalS",
-    "https://linkedin.com/in/AromalS",
-    "https://x.com/AromalSDev",
+    "https://github.com/DeveloperAromal",
+    "https://linkedin.com/in/developeraromal",
+    "https://x.com/Dev_Aro_mal",
   ],
   description:
     "Aromal S is a full-stack developer with expertise in Next.js, React Native, AI/ML integrations, and cybersecurity tools. Creator of LinkLens (NPM package).",
