@@ -6,8 +6,9 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { works } from "../constants/works";
-import { Github, Sparkle } from "lucide-react";
+import { ArrowRight, Sparkle } from "lucide-react";
 import Link from "next/link";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,7 +102,9 @@ export default function Works() {
                 <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent pointer-events-none" />
                 <div className="text-lg lg:block md:block hidden sm:text-2xl md:text-4xl pr-4 py-4 sm:py-10 absolute top-4 left-4 sm:top-8 sm:left-8">
-                  <h2>{project.tagline}</h2>
+                  <h2 className="bg-linear-to-r from-zinc-400 via-zinc-600 to-zinc-700 bg-clip-text text-transparent ">
+                    {project.tagline}
+                  </h2>
                 </div>
 
                 <div className="relative flex items-end justify-center w-full h-full overflow-hidden">
@@ -114,10 +117,10 @@ export default function Works() {
                   />
                 </div>
               </div>
-              <div className="content___section md:w-1/2 flex flex-col justify-between mt-8 md:mt-0 md:pl-8 px-2 sm:px-6">
+              <div className="content___section md:w-1/2 flex flex-col justify-between mt-8 md:mt-0 md:pl-8 px-2 lg:pt-20 md:pt-10 sm:px-6">
                 <div className="flex gap-2">
                   <div
-                    className={`h-2 w-8 ${project.bg} rounded-2xl mt-2`}
+                    className={`h-1 w-8 ${project.bg} rounded-2xl mt-2 text-glow`}
                   ></div>
                   <div>
                     <div className="headline___content">
@@ -145,20 +148,42 @@ export default function Works() {
                           key={idx}
                           className="inline-flex items-center justify-center rounded-full border border-white/20 bg-cyan-500/5 px-2 py-1 text-xs sm:text-sm gap-2 hover:bg-white/10"
                         >
-                          {tech}
+                          <Image
+                            src={tech.url}
+                            alt={tech.name}
+                            width={18}
+                            height={18}
+                            className="w-4 h-4 object-contain"
+                          />
+                          <span>{tech.name}</span>
                         </span>
                       ))}
                     </div>
 
-                    <div className="cta___content mt-6">
-                      <Link href={project.github}>
-                        <button className="px-3 py-2 inline-flex items-center gap-2 bg-white rounded-2xl text-sm">
-                          <Github className="text-neutral-950 w-4 h-4" />
-                          <code className="text-neutral-950">
-                            View on github
-                          </code>
-                        </button>
-                      </Link>
+                    <div className="cta___content mt-6 mb-4 flex gap-2 items-center justify-center lg:items-start lg:justify-start">
+                      <div className="flex justify-between gap-20 items-center">
+                        <Link href={project.github}>
+                          <button className="group  w-full relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-black/30 bg-black/20 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3 dark:border-white/10 dark:bg-white/10">
+                            <span className="z-10 px-3 text-black transition-colors duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                              View Details
+                            </span>
+                            <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 dark:bg-white"></span>
+                            <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-black p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5 dark:bg-white">
+                              <ArrowRight className="lucide lucide-arrow-right text-black transition-all duration-300 dark:text-black" />
+                            </span>
+                          </button>
+                        </Link>
+
+                        <Link href={project.github}>
+                          <Image
+                            src="/icons/github.png"
+                            alt="github"
+                            width={64}
+                            height={64}
+                            className="w-10 h-10 object-contain"
+                          />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>

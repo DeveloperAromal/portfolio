@@ -2,11 +2,16 @@ export const works = [
   {
     title: "PyroScan AI",
     description:
-      "PyroScan AI - Multi-Agent AI System for Forest Fire Prediction & Monitoring",
+      "PyroScan AI is an advanced multi-agent artificial intelligence system designed to predict, monitor, and analyze forest fires using real-time satellite data from NASA FIRMS API, weather information, and historical fire data.",
     tagline: "AI that detects forest fires before they spread",
     image:
       "https://raw.githubusercontent.com/DeveloperAromal/PyroScan-AI/main/src/assets/PyroScan-AI_Banner_Image.jpg",
-    tech: ["Python", "Langchain", "DeepSeek", "Nasa Firms API", "Wheather API"],
+    tech: [
+      { name: "Python", url: "https://cdn.simpleicons.org/python" },
+      { name: "Langchain", url: "https://cdn.simpleicons.org/langchain" },
+      { name: "DeepSeek", url: "https://cdn.simpleicons.org/openai" },
+      { name: "Nasa Firms API", url: "https://cdn.simpleicons.org/nasa" },
+    ],
     points: [
       "Multi-Agent System",
       "Real-time Fire Detection",
@@ -23,7 +28,11 @@ export const works = [
     tagline: "Query databases in plain English, instantly",
     image:
       "https://raw.githubusercontent.com/DeveloperAromal/SynapseDB/main/assets/synapse_thumb.png",
-    tech: ["Rust", "Golang", "Python"],
+    tech: [
+      { name: "Rust", url: "https://cdn.simpleicons.org/rust/red" },
+      { name: "Golang", url: "https://cdn.simpleicons.org/go" },
+      { name: "Python", url: "https://cdn.simpleicons.org/python" },
+    ],
     points: [
       "Natural Language Querying",
       "High-Performance Query Engine",
@@ -40,7 +49,12 @@ export const works = [
     tagline: "Transforming plain text into interactive links instantly",
     image:
       "https://raw.githubusercontent.com/DeveloperAromal/LinkLens/main/assets/linklens_thumb.png",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Javascript"],
+    tech: [
+      { name: "React", url: "https://cdn.simpleicons.org/react" },
+      { name: "TypeScript", url: "https://cdn.simpleicons.org/typescript" },
+      { name: "Tailwind CSS", url: "https://cdn.simpleicons.org/tailwindcss" },
+      { name: "Javascript", url: "https://cdn.simpleicons.org/javascript" },
+    ],
     points: [
       "Detects and highlights URLs, hyperlinks, mention",
       "Generates rich link previews with thumbnails, titles, and descriptions ",
