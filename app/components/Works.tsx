@@ -142,7 +142,7 @@ export default function Works() {
                       {project.tech.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-cyan-500/5 px-2 py-1 text-xs sm:text-sm gap-2 hover:bg-white/10"
+                          className="inline-flex items-center justify-center rounded-full border border-white/20 bg-cyan-500/5 px-2 py-1 text-xs sm:text-sm gap-2 hover:bg-white/10"
                         >
                           {tech}
                         </span>

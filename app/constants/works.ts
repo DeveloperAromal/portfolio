@@ -14,6 +14,7 @@ export const works = [
     ],
     bg: "bg-green-700",
     text: "text-green-700",
+    github: "https://github.com/DeveloperAromal/PyroScan-AI",
   },
   {
     title: "SynapseDB",
@@ -30,6 +31,7 @@ export const works = [
     ],
     bg: "bg-yellow-700",
     text: "text-yellow-700",
+    github: "https://github.com/DeveloperAromal/SynapseDB",
   },
   {
     title: "LinkLens",
@@ -46,5 +48,6 @@ export const works = [
     ],
     bg: "bg-indigo-700",
     text: "text-indigo-700",
+    github: "https://github.com/DeveloperAromal/LinkLens",
   },
 ];
