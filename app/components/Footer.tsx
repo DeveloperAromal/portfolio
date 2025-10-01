@@ -84,13 +84,13 @@ export default function Footer() {
             , let’s begin the journey.
           </div>
           <div className="flex gap-10 pt-10 justify-center lg:justify-start">
-            <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-black/30 bg-black/20 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3 dark:border-white/10 dark:bg-white/10">
-              <span className="z-10 px-3 text-black transition-colors duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                Let&apos;s Acceleratte
+            <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-white/10 bg-white/10 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3">
+              <span className="z-10 px-3 text-white transition-colors duration-300 group-hover:text-black">
+                Let&apos;s Accelerate
               </span>
-              <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 dark:bg-white"></span>
-              <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-black p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5 dark:bg-white">
-                <ArrowRight className="lucide lucide-arrow-right text-black transition-all duration-300 dark:text-black" />
+              <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-white opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"></span>
+              <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-white p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5">
+                <ArrowRight className="lucide lucide-arrow-right text-black transition-all duration-300" />
               </span>
             </button>
           </div>
@@ -102,7 +102,10 @@ export default function Footer() {
           <p>© Aromal S {new Date().getFullYear()}. All rights reserved</p>
         </div>
         <div className="flex gap-6">
-          <Github /> <Linkedin /> <Instagram /> <Twitter />
+          <Github />
+          <Linkedin />
+          <Instagram />
+          <Twitter />
         </div>
       </div>
       <div>

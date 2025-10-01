@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import Image from "next/image";
@@ -24,23 +23,24 @@ export default function Hero() {
     }, 2000);
     return copy;
   };
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
       <ParticleBackground />
-      <div className="absolute bg-[#bc1ef1] w-40 h-40 bottom-0 blur " />
-      <div className="absolute bg-[#bc1ef1] w-40 h-40 bottom-0 right-0 blur " />
+      <div className="absolute bg-[#bc1ef1] w-40 h-40 bottom-0 blur" />
+      <div className="absolute bg-[#bc1ef1] w-40 h-40 bottom-0 right-0 blur" />
       <div className="absolute bg-[#bc1ef1] w-80 h-40 bottom-0 right-1/2 translate-x-1/2 rounded-full top-1/2 -translate-y-1/2 blur" />
 
       <div className="relative h-60 w-full z-[19] mt-8">
         <div className="relative z-20 mx-auto mt-32 mb-2 flex max-w-full flex-col items-center justify-center px-3 md:mt-36 md:max-w-4xl lg:max-w-5xl">
           <HeroReleaseNote />
           <div className="absolute w-40 h-20 bg-sky-300 blur translate-x-1/2 right-1/2" />
-          <h2 className="animate-fadeInUp my-2 w-full py-px text-center text-4xl leading-snug! font-semibold text-balance text-zinc-700 opacity-90 md:text-5xl lg:text-6xl dark:text-zinc-100">
+          <h2 className="animate-fadeInUp my-2 w-full py-px text-center text-4xl leading-snug! font-semibold text-balance text-zinc-100 opacity-90 md:text-5xl lg:text-6xl">
             <span className="md:text-nowrap">I help founders turn ideas</span>
             <br className="hidden md:block" />
             into seamless{" "}
             <span
-              className={`bg-linear-to-l from-zinc-600 via-zinc-700 to-zinc-900 bg-clip-text font-light tracking-wide text-transparent dark:from-zinc-700 dark:via-zinc-200 dark:to-zinc-50 ${CormorantFont.className}`}
+              className={`bg-linear-to-l from-zinc-700 via-zinc-200 to-zinc-50 bg-clip-text font-light tracking-wide text-transparent ${CormorantFont.className}`}
             >
               digital experiences
             </span>
@@ -65,12 +65,12 @@ export default function Hero() {
           </h1>
 
           <div className="animate-fadeInUp z-100 mt-4 flex flex-col items-center justify-center gap-6 sm:flex-row md:mt-8 md:gap-10">
-            <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-black/30 bg-black/20 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3 dark:border-white/10 dark:bg-white/10">
-              <span className="z-10 px-3 text-black transition-colors duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+            <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-white/10 bg-white/10 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3">
+              <span className="z-10 px-3 text-white transition-colors duration-300 group-hover:text-black">
                 Let&apos;s Connect
               </span>
-              <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 dark:bg-white"></span>
-              <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-black p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5 dark:bg-white">
+              <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-white opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"></span>
+              <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-white p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -81,7 +81,7 @@ export default function Hero() {
                   strokeWidth={2}
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-arrow-right text-white transition-all duration-300 group-hover:translate-x-5 group-hover:opacity-0 dark:text-black"
+                  className="lucide lucide-arrow-right text-black transition-all duration-300 group-hover:translate-x-5 group-hover:opacity-0"
                   aria-hidden="true"
                 >
                   <path d="M5 12h14"></path>
@@ -97,7 +97,7 @@ export default function Hero() {
                   strokeWidth={2}
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-arrow-right absolute -translate-x-5 text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 dark:text-black"
+                  className="lucide lucide-arrow-right absolute -translate-x-5 text-black opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
                   aria-hidden="true"
                 >
                   <path d="M5 12h14"></path>
@@ -108,9 +108,9 @@ export default function Hero() {
             <button
               type="button"
               onClick={handleCopy}
-              className="flex items-center gap-2 py-3 text-base font-light text-black dark:text-white/75 outline-hidden transition-all duration-300 cursor-pointer hover:text-black/60 dark:hover:text-white/90"
+              className="flex items-center gap-2 py-3 text-base font-light text-white/75 outline-hidden transition-all duration-300 cursor-pointer hover:text-white/90"
             >
-              {copy == true ? <CheckCircle2 /> : <Copy />}
+              {copy ? <CheckCircle2 /> : <Copy />}
               developeraromal@gmail.com
             </button>
           </div>
@@ -133,13 +133,12 @@ export default function Hero() {
               transform: "translateX(-61.0227px)",
             }}
           ></div>
-          <div className="absolute right-[-432px] bottom-[-753px] left-[-454px] h-[955px] rounded-[100%] bg-gradient-to-b from-black to-transparent dark:from-white"></div>
+          <div className="absolute right-[-432px] bottom-[-753px] left-[-454px] h-[955px] rounded-[100%] bg-gradient-to-b from-white"></div>
           <div
-            className="absolute right-[-510px] bottom-[-759px] left-[-532px] aspect-[2.346820809248555/1] h-[956px] rounded-[100%] shadow-[inset_0_2px_20px_#fff,0_-10px_50px_1px_#ffffff7d] dark:bg-black"
+            className="absolute right-[-510px] bottom-[-759px] left-[-532px] aspect-[2.346820809248555/1] h-[956px] rounded-[100%] bg-black"
             style={{
               boxShadow:
                 "inset 0 2px 22.8022px #000000, 0 -10px 52.8022px 1px rgba(255, 255, 255, 0.53)",
-              backgroundColor: "#000000",
             }}
           ></div>
         </div>

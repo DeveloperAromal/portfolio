@@ -18,7 +18,6 @@ const SmoochSansFont = Smooch_Sans({
   weight: "400",
 });
 
-
 export default function Contacts() {
   const headerRef = useRef(null);
   const letsStartRef = useRef(null);
@@ -63,11 +62,10 @@ export default function Contacts() {
 
   const sectionRef = useRef<HTMLDivElement>(null);
 
-
   return (
     <section
       ref={sectionRef}
-      className="px-4 md:px-20 md:py-16 lg:py-16 py-4 relative"
+      className="px-4 md:px-20 md:py-16 lg:py-16 py-4 relative bg-black text-white"
     >
       <div>
         <div className="flex justify-between items-center">
@@ -95,7 +93,7 @@ export default function Contacts() {
             </h3>
             <p
               ref={letsparaRef}
-              className={`text-sm sm:text-base text-neutral-600 dark:text-neutral-400 ${asimovian.className}`}
+              className={`text-sm sm:text-base text-neutral-400 ${asimovian.className}`}
             >
               If you’d like to collaborate, hire me, or just say hi — feel free
               to reach out using the form or via direct contact info below.
@@ -126,13 +124,13 @@ export default function Contacts() {
                 to get things started.
               </p>
             </div>
-            <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-black/30 bg-black/20 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3 dark:border-white/10 dark:bg-white/10">
-              <span className="z-10 px-3 text-black transition-colors duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+            <button className="group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-white/10 bg-white/10 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3">
+              <span className="z-10 px-3 text-white transition-colors duration-300 group-hover:text-black">
                 Send Info
               </span>
-              <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 dark:bg-white"></span>
-              <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-black p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5 dark:bg-white">
-                <ArrowRight className="lucide lucide-arrow-right text-black transition-all duration-300 dark:text-black" />
+              <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-white opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"></span>
+              <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-white p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5">
+                <ArrowRight className="lucide lucide-arrow-right text-black transition-all duration-300" />
               </span>
             </button>
           </form>
