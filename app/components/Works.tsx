@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { works } from "../constants/works";
 import { Github, Sparkle } from "lucide-react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -150,10 +151,14 @@ export default function Works() {
                     </div>
 
                     <div className="cta___content mt-6">
-                      <button className="px-3 py-2 inline-flex items-center gap-2 bg-white rounded-2xl text-sm">
-                        <Github className="text-neutral-950 w-4 h-4" />
-                        <code className="text-neutral-950">View on github</code>
-                      </button>
+                      <Link href={project.github}>
+                        <button className="px-3 py-2 inline-flex items-center gap-2 bg-white rounded-2xl text-sm">
+                          <Github className="text-neutral-950 w-4 h-4" />
+                          <code className="text-neutral-950">
+                            View on github
+                          </code>
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
