@@ -40,12 +40,12 @@ export default function Hero() {
             <br className="hidden md:block" />
             into seamless{" "}
             <span
-              className={`bg-linear-to-b from-zinc-500 via-zinc-600 to-zinc-900 bg-clip-text font-light tracking-wide text-transparent dark:from-zinc-700 dark:via-zinc-200 dark:to-zinc-50 ${CormorantFont.className}`}
+              className={`bg-linear-to-l from-zinc-600 via-zinc-700 to-zinc-900 bg-clip-text font-light tracking-wide text-transparent dark:from-zinc-700 dark:via-zinc-200 dark:to-zinc-50 ${CormorantFont.className}`}
             >
               digital experiences
             </span>
           </h2>
-          <h1 className="animate-fadeInUp grad-white relative z-20 mt-4 mb-7 flex flex-col items-center justify-center text-center text-xl sm:flex-row md:text-xl lg:mt-7 lg:text-2xl">
+          <h1 className="animate-fadeInUp grad-white relative z-20 mt-4 mb-7 flex flex-col items-center justify-center text-center text-xl sm:flex-row md:text-xl lg:mt-7 lg:text-2xl text-neutral-400">
             <span className="grad-white flex items-center justify-center">
               Hello, I&apos;m &nbsp;Aromal
               <div className="group relative z-300">

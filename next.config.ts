@@ -29,6 +29,12 @@ const nextConfig: NextConfig = {
         pathname: "/**",
         protocol: "https",
       },
+      {
+        hostname: "raw.githubusercontent.com",
+        port: "",
+        pathname: "/**",
+        protocol: "https",
+      },
     ],
   },
 };

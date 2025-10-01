@@ -5,7 +5,7 @@ import { Smooch_Sans } from "next/font/google";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { works } from "../mock/mock";
+import { works } from "../constants/works";
 import { Github, Sparkle } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -95,9 +95,12 @@ export default function Works() {
               key={i}
               className="flex flex-col md:flex-row w-full min-h-0 md:min-h-[75vh] bg-neutral-950 rounded-4xl pt-4 p-4"
             >
-              <div className="relative w-full md:w-1/2 h-47 md:h-[75vh] rounded-2xl px-4 sm:px-10 bg-gradient-to-tr from-zinc-700 to-neutral-900 overflow-hidden transition-all duration-300">
+              <div className="relative w-full md:w-1/2 h-47 md:h-[75vh] rounded-2xl px-4 sm:px-10 bg-gradient-to-tr from-zinc-950 border border-neutral-900 to-neutral-900 overflow-hidden transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent pointer-events-none" />
                 <div className="text-lg lg:block md:block hidden sm:text-2xl md:text-4xl pr-4 py-4 sm:py-10 absolute top-4 left-4 sm:top-8 sm:left-8">
-                  A Emergency responce app that saves millions of lives
+                  <h2>{project.tagline}</h2>
                 </div>
 
                 <div className="relative flex items-end justify-center w-full h-full overflow-hidden">

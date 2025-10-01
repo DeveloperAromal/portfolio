@@ -325,7 +325,7 @@ export default function ParticleBackground() {
               height: 1080,
             },
             limit: 0,
-            value: 300,
+            value: 20,
           },
           opacity: {
             value: {
