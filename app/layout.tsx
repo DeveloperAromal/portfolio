@@ -1,10 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Metadata from "./components/includes/Metadata";
+import type { Metadata } from "next";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
 });
 
@@ -13,6 +12,84 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata: Metadata = {
+  title: "Aromal S | Full-Stack Developer",
+  description:
+    "Aromal S is a full-stack developer specializing in Next.js, React Native, AI/ML integrations, and cybersecurity tools. Creator of LinkLens (NPM package). Expertise in Node.js, TypeScript, Expo, RAG/LLMs, and penetration testing.",
+  keywords: [
+    "Aromal S",
+    "full-stack developer",
+    "Next.js developer",
+    "React Native developer",
+    "AI developer",
+    "cybersecurity",
+    "LinkLens npm",
+    "Node.js",
+    "TypeScript",
+    "penetration testing",
+    "portfolio website",
+    "technical SEO",
+  ],
+  alternates: {
+    canonical: "https://www.aromals.com/",
+  },
+  openGraph: {
+    title: "Aromal S | Full-Stack Developer",
+    description:
+      "Explore the portfolio of Aromal S, a full-stack developer building Next.js apps, React Native mobile apps, AI integrations, and cybersecurity tools.",
+    url: "https://www.aromals.com/",
+    siteName: "Aromal S Portfolio",
+    images: [
+      {
+        url: "https://www.aromals.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Aromal S Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aromal S | Full-Stack Developer",
+    description:
+      "Full-stack developer specializing in Next.js, React Native, AI, and cybersecurity. Creator of LinkLens (NPM).",
+    images: ["https://www.aromals.com/og-image.jpg"],
+    creator: "@AromalSDev",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Aromal S",
+  jobTitle: "Full-Stack Developer",
+  url: "https://www.aromals.com/",
+  sameAs: [
+    "https://github.com/AromalS",
+    "https://linkedin.com/in/AromalS",
+    "https://x.com/AromalSDev",
+  ],
+  description:
+    "Aromal S is a full-stack developer with expertise in Next.js, React Native, AI/ML integrations, and cybersecurity tools. Creator of LinkLens (NPM package).",
+};
 
 export default function RootLayout({
   children,
@@ -21,34 +98,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Metadata
-        title="Aromal S | Full‑Stack Developer"
-        description="Aromal S — Full‑stack developer building production‑grade Next.js apps, React Native mobile apps, AI/ML integrations, and cybersecurity tools. Creator of LinkLens (NPM). Expertise in Node.js, TypeScript, NativeWind, Expo, RAG/LLMs, dashboards, and penetration testing."
-        keywords={`
-                    Aromal S, Aromal, aromals, aromals.com, Aromal S portfolio, Aromal S developer,
-                    Aromal S full‑stack developer, Aromal S React Native, Aromal S Next.js, Aromal S AI,
-                    Aromal S cybersecurity, Aromal S CodeCave, CodeCave developer, Master Tutor Steyp, Steyp mentor,
-                    LinkLens, LinkLens npm, linklens npm package, linklens package,
-                    Next.js developer portfolio, Next.js SEO, React Server Components, App Router Next.js, Metadata API Next.js,
-                    React Native developer, React Native portfolio, Expo, Expo Router, NativeWind, TypeScript mobile,
-                    JavaScript developer, Node.js developer, Express.js, REST APIs, GraphQL, tRPC, Prisma, PostgreSQL, MongoDB, Redis, Drizzle ORM,
-                    Security engineer, penetration testing, web pentest, OWASP, XSS prevention, CSRF protection, JWT auth, OAuth 2.0, NextAuth, secure coding, DevSecOps,
-                    CI/CD, GitHub Actions, Docker, containerized apps, Vercel, Netlify, Cloudflare, AWS Lambda, Firebase, Supabase, serverless Next.js, edge functions,
-                    AI developer, AI/ML integration, OpenAI API, LangChain, vector DB, RAG pipeline, embeddings, semantic search, AI copilots,
-                    video steganography, QR code masking, OpenCV Python, image processing, computer vision,
-                    dashboards, admin dashboards, UI systems, design systems, Tailwind CSS, NativeWind styling,
-                    performance optimization, Core Web Vitals, Lighthouse, accessibility a11y, mobile‑first development,
-                    portfolio website, developer branding, GitHub projects, npm packages, package publishing, monorepo, Turborepo, Bun, PNPM,
-                    testing Jest, Playwright, end‑to‑end testing, code quality, linting, TypeScript strict, Sentry, logging, observability,
-                    feature flags, internationalization i18n, content SEO, technical SEO, structured data, Open Graph, Twitter cards,
-                    canonical URL, sitemap, robots metadata, 2025 SEO trends, entity SEO, topical authority, zero‑click SERP, long‑tail keywords, voice search, 
-                    visual search, developeraromal, DeveloperAromal, Developer Aromal, developer aromal, aromals
-                `}
-        canonical="https://www.aromals.com/"
-      />
-
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <link
+          rel="preload"
+          href="/fonts/geist.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/geist-mono.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        className={`${geist.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         {children}
       </body>
