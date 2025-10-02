@@ -81,6 +81,8 @@ export default function Nav() {
             <NavbarButton
               onClick={() => setIsMobileMenuOpen(false)}
               variant="primary"
+              href="/assets/Aromal_Resume.pdf"
+              download={true}
               className="w-full"
             >
               View Resume

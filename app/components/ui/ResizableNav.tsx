@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 
+import { useRouter } from "next/navigation";
 interface NavbarProps {
   children: React.ReactNode;
   className?: string;
@@ -246,7 +247,6 @@ export const NavbarLogo = () => {
 };
 
 export const NavbarButton = ({
-  href,
   as: Tag = "a",
   children,
   className,
@@ -273,10 +273,15 @@ export const NavbarButton = ({
     gradient:
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
-
+  const router = useRouter();
+  const handleView = () => {
+    router.push("/hire/view-resume");
+  };
   return (
     <Tag
-      href={href || undefined}
+      href="/assets/Aromal_Resume.pdf"
+      download={true}
+      onClick={handleView}
       className={cn(baseStyles, variantStyles[variant], className)}
       {...props}
     >
