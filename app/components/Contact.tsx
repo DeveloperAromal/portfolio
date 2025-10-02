@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Smooch_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
@@ -23,6 +23,36 @@ export default function Contacts() {
   const letsStartRef = useRef(null);
   const letsparaRef = useRef(null);
   const inputRef = useRef(null);
+
+    const [formData, setFormData] = useState({
+      name: "",
+      email: "",
+      message: "",
+    });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("/api/v1/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error("Failed to send message");
+
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -100,26 +130,38 @@ export default function Contacts() {
             </p>
           </div>
 
-          <form className="space-y-6" ref={inputRef}>
+          <form className="space-y-6" ref={inputRef} onSubmit={handleSubmit}>
             <div className="flex flex-col space-y-4 text-lg sm:text-xl md:text-2xl lg:text-3xl text-neutral-600">
               <p className="leading-relaxed text-neutral-300">
                 Hi! My name is{" "}
                 <input
                   type="text"
+                  name="name"
                   className="outline-none font-mono w-32 sm:w-40 md:w-48 lg:w-56 border-b-1 border-neutral-500 bg-transparent text-lg sm:text-xl md:text-2xl lg:text-3xl inline-block align-baseline"
                   placeholder="your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                 />
                 , and I have a{" "}
                 <input
                   type="text"
+                  name="message"
                   className="outline-none font-mono w-32 sm:w-40 md:w-48 lg:w-56 border-b-1 border-neutral-500 bg-transparent text-lg sm:text-xl md:text-2xl lg:text-3xl inline-block align-baseline"
                   placeholder="project/job"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                 />
                 that needs your help. You can reach me at{" "}
                 <input
                   type="email"
+                  name="email"
                   className="outline-none font-mono w-32 sm:w-40 md:w-48 lg:w-56 border-b-1 border-neutral-500 bg-transparent text-lg sm:text-xl md:text-2xl lg:text-3xl inline-block align-baseline"
                   placeholder="your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                 />
                 to get things started.
               </p>
