@@ -18,8 +18,8 @@ export default function News() {
             03. Media
           </h2>
           <div className="max-w-2xl">
-            <p className="flex text-neutral- text-xs pb-1 tracking-widest opacity-60">
-              [ Media Coverage ]
+            <p className="flex bg-linear-to-r from-zinc-400 via-zinc-600 to-zinc-700 bg-clip-text text-transparent text-xs pb-1 tracking-widest opacity-60">
+              [ Spotlight ]
             </p>
             <hr className="text-neutral-800 pb-10" />
           </div>

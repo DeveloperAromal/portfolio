@@ -21,11 +21,19 @@ const SmoochSansFont = Smooch_Sans({
 export default function WhatIDo() {
   return (
     <section className="px-4 py-8 sm:px-8 sm:py-16 md:px-16 lg:px-20 lg:py-20 bg-black text-white">
-      <h2
-        className={`${SmoochSansFont.className} text-[3rem] text-right sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-white pb-10`}
-      >
-        02. What I Do
-      </h2>
+      <div className="flex justify-between items-center gap-20">
+        <div className="max-w-2xl">
+          <p className="flex bg-linear-to-r from-zinc-400 via-zinc-600 to-zinc-700 bg-clip-text text-transparent text-xs pb-1 tracking-widest opacity-60">
+            [ Essence ]
+          </p>
+          <hr className="text-neutral-800 pb-10" />
+        </div>
+        <h2
+          className={`${SmoochSansFont.className} text-[3rem] text-right sm:text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold tracking-tight text-white pb-10`}
+        >
+          02. What I Do
+        </h2>
+      </div>
 
       <BentoGrid className="max-w-[90rem] md:auto-rows-[20rem]">
         {items.map((item, i) => (
