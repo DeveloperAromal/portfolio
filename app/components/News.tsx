@@ -28,14 +28,14 @@ export default function News() {
         <VideoDialog
           className="block dark:hidden"
           animationStyle="from-center"
-          videoSrc="/works/news.mp4"
+          videoSrc="https://raw.githubusercontent.com/DeveloperAromal/portfolio/main/app/public/works/news.mp4"
           thumbnailSrc="https://i.ytimg.com/vi/jOmSNKzI9GY/maxresdefault.jpg"
           thumbnailAlt="Video"
         />
         <VideoDialog
           className="hidden dark:block"
           animationStyle="from-center"
-          videoSrc="/works/news.mp4"
+          videoSrc="https://raw.githubusercontent.com/DeveloperAromal/portfolio/main/app/public/works/news.mp4"
           thumbnailSrc="https://i.ytimg.com/vi/jOmSNKzI9GY/maxresdefault.jpg"
           thumbnailAlt="Video"
         />
